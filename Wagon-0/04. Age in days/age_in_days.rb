@@ -1,7 +1,7 @@
 def age_in_days(day, month, year)
-  # your code goes here !
+	t = Time.new(year, month, day)
+	((Time.now - t) / (60 * 60 * 24)).truncate
 end
 
-
 # Testing your code
-puts age_in_days(6, 11, 1985)
+puts age_in_days(7, 12, 1986)
