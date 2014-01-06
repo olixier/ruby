@@ -1,1 +1,15 @@
 // Copy your irb shell history below !
+
+1.9.3-p392 :001 > my_name = "Olivier"
+ => "Olivier" 
+1.9.3-p392 :005 > def say_hi_to(name); prints "Hello #{name}!"; end
+ => nil 
+1.9.3-p392 :006 > say_hi_to("Olivier")
+NoMethodError: undefined method `prints' for main:Object
+	from (irb):5:in `say_hi_to'
+	from (irb):6
+	from /usr/local/rvm/rubies/ruby-1.9.3-p392/bin/irb:16:in `<main>'
+1.9.3-p392 :008 > def say_hi_to(name); print "Hello #{name}!"; end
+ => nil 
+1.9.3-p392 :009 > say_hi_to(my_name)
+Hello Olivier! => nil 
