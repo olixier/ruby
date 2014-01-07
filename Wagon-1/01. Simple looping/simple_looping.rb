@@ -25,9 +25,9 @@ end
 
 # Testing your code
 
-puts "Min?"
+puts "Min please?"
 min = gets.to_i
-puts "Max?"
+puts "Max please?"
 max = gets.to_i
 
 puts "The 'for' method gives #{sum(min, max)}"
