@@ -13,6 +13,6 @@ chapters = [
 puts title.center(70)
 puts ""
 chapters.each do |x, y|
-	print "Chapter #{chapters.index([x, y]) + 1} : #{x}".ljust(60)
-	puts "Page #{y}".rjust(10)
+  print "Chapter #{chapters.index([x, y]) + 1} : #{x}".ljust(60)
+  puts "Page #{y}".rjust(10)
 end
