@@ -1,5 +1,15 @@
 def beersong(nb_at_start)
-  # your code goes here
+	count = nb_at_start.to_i
+	nb_bottle = count == 1 ? "bottle" : "bottles"
+	until count == "no more"
+		puts "#{count} #{nb_bottle} of beer on the wall, #{count} #{nb_bottle} of beer!"
+		count -= 1
+		nb_bottle = count == 1 ? "bottle" : "bottles"
+		count = count == 0 ? "no more" : count
+		puts "Take one down, pass it around, #{count} #{nb_bottle} of beer on the wall!"
+	end
+puts "No more bottles of beer on the wall, no more bottles of beer!"
+puts "Go to the store and buy some more, 99 bottles of beer on the wall!"
 end
 
 beersong( ARGV[0] )
