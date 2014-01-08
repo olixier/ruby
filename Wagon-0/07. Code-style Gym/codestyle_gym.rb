@@ -4,7 +4,7 @@ class PlayerMoving
   def initialize(position) 
     @position = position
     @iterations = 0
-    raise "Position must be between 1 and 100" unless GRID_POSITIONS.include? @position
+    raise "Position must be between 1 and 100" unless GRID_POSITIONS.include?(@position)
   end
     
   def move(distance_in_meters)
