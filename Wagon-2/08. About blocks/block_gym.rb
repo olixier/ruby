@@ -1,13 +1,14 @@
 # Recoding inject iterator
 
 def inject(array, initial_value)
-	sum = initial_value
-	a = 0
-	array.each { |x| sum += yield(a, x) }
-	sum
+	array.each { |x| initial_value = yield(initial_value, x) }
+	initial_value
 end
 
 puts inject(1..100, 0) { |initial_value, element| element + initial_value } == 5050 # true
+puts inject(1..5, 1) { |initial_value, element| element * initial_value } == 120 # true
+
+
 
 # Block timer
 
