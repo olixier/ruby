@@ -1,6 +1,13 @@
-def group_mails( emails ) 
-  # your code goes here
+def group_mails(emails) 
+	output = Hash.new { |hash, key| hash[key] = [] }
+	emails.each { |email| output[domain_scan(email)] << email } 
+	output
 end
+
+def domain_scan(email)
+	email.match(/[\@\b][\w-]+[\.\b]/).to_s[1...-1]
+end
+
 
 users_emails = %w( bob@yahoo.fr 
                    roger57@hotmail.fr 
@@ -9,7 +16,6 @@ users_emails = %w( bob@yahoo.fr
                    monsieur.olivier@gmail.com 
                    monsieur.mack@gmail.com )
                    
-
 puts group_mails( users_emails ) 
 
 # => {"yahoo" => ["bob@yahoo.fr", "bigbox@yahoo.fr"], 
