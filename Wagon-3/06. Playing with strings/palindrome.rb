@@ -1,5 +1,5 @@
 def palindrome?(a_string)
-  # return true if a_string is a palindrome / false otherwise 
+	a_string.reverse.downcase.gsub(/\W+/,'') == a_string.downcase.gsub(/\W+/,'')
 end
 
   
