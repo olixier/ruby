@@ -13,7 +13,10 @@
 
 
 def is_valid_phone_number(phone_number)
-  # your code here
+	value = phone_number.gsub(/[-.\s]/, '')
+	return true if value.length == 10 && value.start_with?("0")
+	return true if value.length == 12 && value.start_with?("+33")
+	false
 end
 
 
