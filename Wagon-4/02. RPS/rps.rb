@@ -1,16 +1,21 @@
 class WrongNumberOfPlayersError < StandardError ; end
 class NoSuchStrategyError < StandardError ; end
 
+RPS = { "R" => "S", "P" => "R", "S" => "P" }
+
 def rps_game_winner(game)
   raise WrongNumberOfPlayersError unless game.length == 2
-  # your code here
-  "not implemented yet !"
+  raise NoSuchStrategyError unless RPS.has_key?(game[0][1].upcase) && RPS.has_key?(game[1][1].upcase)
+  return RPS[game[1][1].upcase] == game[0][1].upcase ? game[1] : game[0]
 end
 
 
 def rps_tournament_winner(tournament)
-  # your code here
-  "not implemented yet !"
+  if tournament[0][0].is_a?(Array)
+    rps_tournament_winner([rps_tournament_winner(tournament[0]), rps_tournament_winner(tournament[1])])
+  else
+    rps_game_winner(tournament)
+  end
 end
 
 # Testing winner of a single game
